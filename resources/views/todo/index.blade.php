@@ -82,6 +82,17 @@
             });
         </script>
 
+        {{-- <script>
+            $(document).ready(function() {
+                Echo.channel('todos')
+                    .listen('TodoCreated', (e) => {
+                        console.log('a');
+                        alert(`Todo Created: ${e.todo.project}`);
+                        // You can also update the UI here
+                    });
+            });
+        </script> --}}
+
         <script>
             $(document).ready(function() {
                 $('#datatable').DataTable({

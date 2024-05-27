@@ -52,11 +52,12 @@ class TodoController extends Controller
 
         $todo = Todo::create($validated);
 
-        // Mengirim notifikasi ke semua pengguna
+        // // Mengirim notifikasi ke semua pengguna
         $users = User::all();
         foreach ($users as $user) {
             $user->notify(new TodoCreated($todo));
         }
+        // event(new TodoCreated($todo));
 
         return response()->json($todo, 201);
     }
